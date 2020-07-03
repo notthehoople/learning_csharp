@@ -94,6 +94,81 @@ person.Introduce();
 - without the static modifier, each object in memory has a copy of each method
 - with the static modified, there can only be a single instance of a method in memory
 
+## Structs
+Small difference between a struct and a class. Structs are lighter, so if you are declaring thousands of them then structs will be more efficient
+```
+public struct RgbColour
+{
+    public int Red;
+    public int Green;
+    public int Blue;
+}
+```
+
+# Arrays
+- Arrays are classes
+- Arrays have a fixed size, and need memory to be allocated to them:
+```
+int[] numbers = new int[3];
+numbers[0] = 1;
+numbers[1] = 2;
+numbers[2] = 3;
+```
+or:
+```
+int[] numbers = new int[3] { 1, 2, 3 };
+```
+
+# Strings
+- "String" class and "string" type are exactly the same
+- strings are classes
+- Strings can be concatented. Use the string.Format method as shown to make the output easier to visualise
+- Strings are immutable. Once created, they cannot be changed
+- All methods that manipulate strings create new strings in the background
+- Special characters need to be escaped with "\" e.g. "\\", "\n", "\t"
+
+```
+string firstName = "mark";
+string lastName = "bradshaw";
+string name = firstName + " " + lastName;
+string otherName = string.Format("{0} {1}", firstName, lastName);
+```
+
+```
+var numbers = new int[3] { 1, 2, 3};
+string list = string.Join(",", numbers);
+```
+
+```
+string name = "Mark";
+char firstChar = name[0];       // Will be set to 'M'
+```
+
+## Verbatim String
+- no need to escape special characters
+```
+string path1 = "c:\\projects\\project1\\folder1";
+string path2 = @"c:\projects\project1\folder1";
+```
+# Enumeration Types (enum)
+A value type defined by a set of named constants of "int". Instead of multiple contstants e.g.
+```
+const int RegularAirMail = 1;
+const int RegisteredAirMail = 2;
+const int Express = 3;
+```
+use an enum covering Shipping Methods:
+```
+public enum Shipping Method
+{
+    RegularAirMail = 1,
+    RegisteredAirMail = 2,
+    Express = 3;
+}
+
+var method = ShippingMethod.Express;
+```
+
 # Useful Classes
 ## Console
 Used to interact with the console
