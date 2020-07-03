@@ -24,7 +24,36 @@ These are the common primitive types:
 - char (2 bytes)
 - bool
 
+## var
+Using `var` to declare variables lets C# detect the data type itself
+```
+char character = 'A';
+var character = 'A';
+```
+
+NOTE that C# defaults to:
+- int for intergers
+- float for real numbers
+
+## Overflow protection
+By default there is no overflow protection. A byte variable with value 255 will overflow to 0 if it is incremented. To prevent this use the `checked` keyword to throw an exception if an overflow is detected:
+
+```
+checked
+{
+    byte number = 255;
+    number++;
+}
+```
+
 # Useful Classes
 ## Console
 Used to interact with the console
-- Console.WriteLine("x"); # Prints "x" to the Console 
+- Console.WriteLine("x"); # Prints "x" to the Console
+## Convert
+ A collection of conversion methods for changing variable types
+ - Convert.ToInt32(s);
+
+# Visual Studio Shortcuts
+- CMD-click on a type, method or class brings up the Assembly Browser so you can look through the available methods
+- type cw <tab><tab> will fill in Console.WriteLine()
