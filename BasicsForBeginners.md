@@ -169,13 +169,90 @@ public enum Shipping Method
 var method = ShippingMethod.Express;
 ```
 
+# User Input
+To get user input from the console use `Console.ReadLine()`
+# Control Flow
+
+## Switch
+You can collapse cases if the code is the same. In the following example the case for Season.Autumn will fall into the code for Season.Summer:
+```
+switch (season)
+{
+    case Season.Autumn:
+    case Season.Summer:
+        Console.WriteLine("Sales promotion time!");
+        break;
+    default:
+        Console.WriteLine("Normal pricing");
+        break;
+}
+```
+## Conditional Operator
+Conditional operator is `condition` ? <if true> : <if false>. It is short hand for a simple if..else condition.
+```
+bool isGoldCustomer = true;
+float price = (isGoldCustomer) ? 19.95f : 29.95f;
+```
+
+# Iteration Statements
+## For loops
+```
+for (var i = 0; i < 10; i++)
+{
+    ...
+}
+```
+## Foreach loops
+Used to iterate over a list, array or string
+```
+var name = "John Smith";
+foreach (var character in name)
+{
+    ...
+}
+```
+## While loop
+Can be used in the same situations as the for loop, but much better to use it when we don't know how many times round the loop we'll go.
+```
+var i = 0;
+while (i < 10)
+{
+    ...
+    i++;
+}
+```
+## Do-While loops
+The loop is executed at least once as the condition is evaluated at the end of the loop
+```
+do
+{
+    ...
+    i++;
+} while (i < 10);
+```
+## Break and Continue
+- break: jumps out of the loop
+- continue: jumps to the next iteration of the loop
+
 # Useful Classes
 ## Console
 Used to interact with the console
 - Console.WriteLine("x"); # Prints "x" to the Console
 ## Convert
- A collection of conversion methods for changing variable types
- - Convert.ToInt32(s);
+A collection of conversion methods for changing variable types
+- Convert.ToInt32(s);
+## Random
+`random.Next();`
+- returns a non-negative random number
+
+`random.Next(minValue, maxValue)`
+- random numbers between minValue and maxValue
+- can use this to generate random characters by casting to char:
+```
+var random = new Random();
+Console.WriteLine("Random character: " + (char)random.Next((int)'a', (int)'z'));
+Console.WriteLine("Random character: " + (char)('a' + random.Next(0, 26)));
+```
 
 # Visual Studio Shortcuts
 - CMD-click on a type, method or class brings up the Assembly Browser so you can look through the available methods
