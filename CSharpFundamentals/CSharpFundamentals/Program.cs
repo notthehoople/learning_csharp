@@ -1,5 +1,6 @@
 ﻿using CSharpFundamentals.Math;
 using System;
+using System.Collections.Generic;
 
 namespace CSharpFundamentals
 {
@@ -18,7 +19,77 @@ namespace CSharpFundamentals
             CalculatorExample();
             RandomExamples();
             EnumExamples();
+            ReferenceAndValueTypes();
+            WorkingWithArrays();
+            WorkingWithLists();
+        }
 
+        private static void WorkingWithLists()
+        {
+            var numbers = new List<int>() { 1, 2, 3, 4 };
+
+            Console.WriteLine("======= Lists ========");
+            numbers.Add(1);                                 // Add an element to the list
+            numbers.AddRange(new int[3] { 5, 1, 7 });       // Add multiple elements to a list
+
+            foreach (var number in numbers)
+                Console.WriteLine("Full List: " + number);
+
+            Console.WriteLine("First Index of 1: " + numbers.IndexOf(1));
+            Console.WriteLine("Last Index of 1: " + numbers.LastIndexOf(1));
+
+            Console.WriteLine("Count of elements: " + numbers.Count);
+
+            numbers.Remove(1);                              // Remove first occurrance of "1"
+            foreach (var number in numbers)
+                Console.WriteLine("Removed first 1. Element: " + number);
+
+            // Remove all occurrances of 1
+            for (var i = 0; i < numbers.Count; i++)
+            {
+                if (numbers[i] == 1)
+                    numbers.Remove(numbers[i]);
+            }
+
+            foreach (var number in numbers)
+                Console.WriteLine("Removed all 1s. Element: " + number);
+
+            numbers.Clear();
+            Console.WriteLine("Count of elements after Clear(): " + numbers.Count);
+        }
+
+        private static void WorkingWithArrays()
+        {
+            var numbers = new int[] { 3, 7, 9, 1, 14, 6 };      // "int" isn't needed as the type will be worked out
+
+            Console.WriteLine("======= Arrays ========");
+
+            Console.WriteLine("Length: " + numbers.Length);
+
+            var index = Array.IndexOf(numbers, 9);
+            Console.WriteLine("Index of 9 is " + index);
+
+            // Clear: set elements to 0
+            Array.Clear(numbers, 0, 2);
+            foreach (var n in numbers)
+                Console.WriteLine("Cleared Element {0}", n);
+
+            var destinationArray = new int[3];
+            Array.Copy(numbers, destinationArray, 3);
+            foreach (var n in destinationArray)
+                Console.WriteLine("Copied Element {0}", n);
+
+            Array.Sort(numbers);
+            foreach (var n in numbers)
+                Console.WriteLine("Sorted Element {0}", n);
+
+            Array.Reverse(numbers);
+            foreach (var n in numbers)
+                Console.WriteLine("Reversed Element {0}", n);
+        }
+
+        private static void ReferenceAndValueTypes()
+        {
             // Reference and Value types example
             var playingWithTypes = new PlayingWithTypes();
             playingWithTypes.DoStuff();

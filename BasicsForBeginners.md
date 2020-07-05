@@ -118,6 +118,60 @@ or:
 ```
 int[] numbers = new int[3] { 1, 2, 3 };
 ```
+## Multi Dimension Arrays
+Two types:
+- rectangular: each row has the same number of columns
+- jagged: number of columns can be different for each row. An array of arrays
+
+### Rectangular
+```
+var matrix = new int[<ROW>, <COLUMN>];
+var matrix = new int[3, 5];
+var matrixValues = new int[3, 5]
+{
+    { 1, 2, 3, 4, 5 },
+    { 6, 7, 8, 9, 10 },
+    { 11, 12, 13, 14, 15}
+};
+var element = matrixValues[0, 0];
+
+// 3 dimensional array
+var colours = new int[3, 5, 4];
+```
+### Jagged
+We don't declare the size of the column (second element)
+```
+var array = new int[3][];       // Leave the second element empty
+array[0] = new int[4];
+array[1] = new int[5];
+array[2] = new int[3];
+array[0][0] = 1;
+```
+### Arrays are classes
+Field: Length
+Methods:
+- Clear()
+- Copy()
+- IndexOf()
+- Reverse()
+- Sort()
+
+## Lists
+- Similar to arrays, but have a dynamic size
+- MOst of the time we use Lists instead of Arrays
+```
+var numbers = new List<int>();      // int specifies the type of the list
+var numbers = new List<int>() { 1, 2, 3, 4 };
+```
+- can create a list of any type, including userdefined types
+- Methods:
+    - Add()
+    - AddRange()
+    - Remove()      # Note: we can't remove elements in a foreach loop
+    - RemoveAt()
+    - IndexOf()
+    - Contains()
+    - Count
 
 # Strings
 - "String" class and "string" type are exactly the same
@@ -241,6 +295,16 @@ Used to interact with the console
 ## Convert
 A collection of conversion methods for changing variable types
 - Convert.ToInt32(s);
+## DateTime
+- DateTime.Now          # The time now
+- DateTime.Today        # Today's date
+```
+var now = DateTime.Now;
+var today = DateTime.Today;
+Console.WriteLine("Hour: " + now.Hour);
+Console.WriteLine("Minute: " + now.Minute);
+```
+
 ## Random
 `random.Next();`
 - returns a non-negative random number
