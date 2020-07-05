@@ -1,7 +1,9 @@
 ﻿using CSharpFundamentals.Math;
+using CSharpFundamentals.Files;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.IO;
 
 namespace CSharpFundamentals
 {
@@ -27,6 +29,31 @@ namespace CSharpFundamentals
             WorkingWithStrings();
             StringCodingExample();
             WorkingWithStringBuilder();
+            WorkingWithFiles();
+        }
+
+        private static void WorkingWithFiles()
+        {
+            var path = "/Volumes/MacBooty/Repos/Training/learning_csharp/test.file";
+            //File.Copy("/this/that/pic.jpg", "/this/that/mynewfile.jpg", true);      // "true" - if file exists do I overwrite or not?
+            //File.Delete(path);
+            //if (File.Exists(path))
+            //{
+            // Do something with the file
+            //}
+            //var content = File.ReadAllText(path);
+
+            var fileInfo = new FileInfo(path);
+            //fileInfo.CopyTo("...");
+            //fileInfo.Delete();
+            //if (fileInfo.Exists)
+            //{
+            // Do something with the file
+            //}
+            // NOTE: ReadAllText() doesn't exist for FileInfo
+            var fileUtility = new FileUtility();
+
+            Console.WriteLine("Word Count: " + fileUtility.WordCount(path));
         }
 
         private static void WorkingWithStringBuilder()

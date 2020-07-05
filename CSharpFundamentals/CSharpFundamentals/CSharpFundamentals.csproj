@@ -36,9 +36,11 @@
     <Compile Include="Math\Calculator.cs" />
     <Compile Include="PlayingWithTypes.cs" />
     <Compile Include="StringUtility.cs" />
+    <Compile Include="Files\FileUtility.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Math\" />
+    <Folder Include="Files\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

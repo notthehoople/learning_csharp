@@ -300,6 +300,30 @@ bool isGoldCustomer = true;
 float price = (isGoldCustomer) ? 19.95f : 29.95f;
 ```
 
+# Working with Files
+- FileInfo: provides instance methods
+    - faster
+- File: provides static methods
+    - security checks are done every time a static method is used
+    - if you call static methods many, many times the overhead is significant
+- File, FileInfo Methods
+    - Create()
+    - Copy()
+    - Delete()
+    - Exists()
+    - GetAttributes()
+    - Move()
+    - ReadAllText()             # Reads all the text in a file
+- Directory, DirectoryInfo
+    - GetLogicalDrives()        # Logical drives of your hard disk (C:, D:, etc)
+    - GetCurrentDirectory()
+    - GetFiles()                # Can provide filters
+- Path
+    - GetDirectoryName()
+    - GetFileName()
+    - GetExtension()
+    - GetTempPath()
+
 # Iteration Statements
 ## For loops
 ```
