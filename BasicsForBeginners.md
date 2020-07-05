@@ -296,6 +296,7 @@ Used to interact with the console
 A collection of conversion methods for changing variable types
 - Convert.ToInt32(s);
 ## DateTime
+- DateTime objects are immutable. Once they are set they cannot be changed
 - DateTime.Now          # The time now
 - DateTime.Today        # Today's date
 ```
@@ -304,7 +305,32 @@ var today = DateTime.Today;
 Console.WriteLine("Hour: " + now.Hour);
 Console.WriteLine("Minute: " + now.Minute);
 ```
-
+- there are many methods beginning with "Add" which change the dates
+```
+var tomorrow = now.AddDays(1);
+var yesterday = now.AddDays(-1);
+Console.WriteLine(now.ToLongDateString());      // Long format, date only
+Console.WriteLine(now.ToShortDateString());     // Short format, date only
+Console.WriteLine(now.ToLongTimeString());      // Long format, time only
+Console.WriteLine(now.ToShortTimeString());     // Short format, time only
+Console.WriteLine(now.ToString("yyyy-MM-dd"));  // Convert the date to a string, with format
+```
+## TimeSpan
+```
+var timeSpan = new TimeSpan(1, 2, 3);           // One hour, two minutes, three seconds
+var timeSpan1 = new TimeSpan(1, 0, 0);           // Specify only one hour
+```
+It's not clear what these numbers mean. TimeSpan has methods for clarity
+```
+var timeSpan2 = TimeSpan.FromHours(1);          // same as timeSpan1 definition
+```
+Working with TimeSpan:
+```
+var start = DateTime.Now;
+var end = DateTime.Now.AddMinutes(2);
+var duration = end - start;
+Console.WriteLine("Duration: " + duration);
+```
 ## Random
 `random.Next();`
 - returns a non-negative random number

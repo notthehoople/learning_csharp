@@ -22,6 +22,36 @@ namespace CSharpFundamentals
             ReferenceAndValueTypes();
             WorkingWithArrays();
             WorkingWithLists();
+            DatesAndTime();
+        }
+
+        private static void DatesAndTime()
+        {
+            // Creating
+            var timeSpan = new TimeSpan(1, 2, 3);           // One hour, two minutes, three seconds
+
+            var timeSpan1 = new TimeSpan(1, 0, 0);          // Specify only one hour
+            var timeSpan2 = TimeSpan.FromHours(1);          // same as timeSpan1 definition
+
+            var start = DateTime.Now;
+            var end = DateTime.Now.AddMinutes(2);
+            var duration = end - start;
+            Console.WriteLine("Duration: " + duration);
+
+            // Properties
+            Console.WriteLine("Minutes: " + timeSpan.Minutes);
+            Console.WriteLine("Total Minutes: " + timeSpan.TotalMinutes);
+
+            // Add
+            Console.WriteLine("Add Example: " + timeSpan.Add(TimeSpan.FromMinutes(8)));
+            Console.WriteLine("Subtrace Example: " + timeSpan.Subtract(TimeSpan.FromMinutes(2)));
+
+            // ToString conversion
+            var stringTime = timeSpan.ToString();
+            Console.WriteLine("ToString: " + stringTime);
+            
+            // Parse
+            Console.WriteLine("Parse: " + TimeSpan.Parse("01:02:03"));
         }
 
         private static void WorkingWithLists()
