@@ -35,6 +35,7 @@
     <Compile Include="Person.cs" />
     <Compile Include="Math\Calculator.cs" />
     <Compile Include="PlayingWithTypes.cs" />
+    <Compile Include="StringUtility.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Math\" />

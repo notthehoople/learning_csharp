@@ -1,6 +1,7 @@
 ﻿using CSharpFundamentals.Math;
 using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace CSharpFundamentals
 {
@@ -23,6 +24,68 @@ namespace CSharpFundamentals
             WorkingWithArrays();
             WorkingWithLists();
             DatesAndTime();
+            WorkingWithStrings();
+            StringCodingExample();
+            WorkingWithStringBuilder();
+        }
+
+        private static void WorkingWithStringBuilder()
+        {
+            var builder = new StringBuilder();
+            builder.Append('=', 7);        // Add 7 equals to the string
+            builder.Append(" StringBuilder ");
+            builder.Append('=', 7);        // Add 7 equals to the string
+            builder.AppendLine();
+            builder.Append("Header");
+            builder.AppendLine();
+            builder.Append('-', 10);
+            Console.WriteLine(builder);
+
+            builder.Replace('=', '+');
+            Console.WriteLine(builder);
+
+            builder.Remove(0, 7);
+            builder.Insert(0, new string('-', 7));
+            Console.WriteLine(builder);
+        }
+
+        private static void StringCodingExample()
+        {
+            var sentence = "Congratulations you are now officially on the start line for the Dixons Carphone Virtual Race to the Stones! Now is the time to get yourself in the zone and fully prepared, ready for when the challenge starts on 6th July";
+            var summary = StringUtility.SummariseText(sentence, 40);
+            Console.WriteLine("======= String Coding Example ========");
+            Console.WriteLine("Summary is:");
+            Console.WriteLine(summary);
+        }
+
+        private static void WorkingWithStrings()
+        {
+            var fullName = "Mark Bradshaw ";
+
+            Console.WriteLine("======= Strings ========");
+
+            Console.WriteLine("Trim: '{0}'", fullName.Trim());
+            Console.WriteLine("ToUpper: '{0}'", fullName.Trim().ToUpper());
+
+            // Simple Split
+            Console.WriteLine("Spit: '{0}' '{1}'", fullName.Split(' '));
+            // Clearer Split
+            var names = fullName.Split(' ');
+            Console.WriteLine("Split First Name: " + names[0]);
+            Console.WriteLine("Split Last Name: " + names[1]);
+
+            // More complex split
+            var index = fullName.IndexOf(' ');
+            var firstName = fullName.Substring(0, index);
+            var lastName = fullName.Substring(index + 1);
+            Console.WriteLine("Substring First Name: {0} Last Name: {1}", firstName, lastName);
+
+            Console.WriteLine("Replace: " + fullName.Replace("Mark", "Git"));
+
+            // Testing for null or empty space
+            var emptyString = " ";
+            if (String.IsNullOrWhiteSpace(emptyString))
+                Console.WriteLine("Empty string is invalid");
         }
 
         private static void DatesAndTime()
@@ -32,6 +95,8 @@ namespace CSharpFundamentals
 
             var timeSpan1 = new TimeSpan(1, 0, 0);          // Specify only one hour
             var timeSpan2 = TimeSpan.FromHours(1);          // same as timeSpan1 definition
+
+            Console.WriteLine("======= Dates and Time ========");
 
             var start = DateTime.Now;
             var end = DateTime.Now.AddMinutes(2);

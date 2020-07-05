@@ -204,6 +204,58 @@ char firstChar = name[0];       // Will be set to 'M'
 string path1 = "c:\\projects\\project1\\folder1";
 string path2 = @"c:\projects\project1\folder1";
 ```
+## Formatting
+- ToLower()                     # Returns lower case string
+- ToUpper()                     # Returns upper case string
+- Trim()                        # Removes whitespace
+- IndexOf('a')                  # Searches the string for the first occurrance of 'a'
+- LastIndexOf("Hello")          # Searches the string for the last occurrance of "Hello"
+- Substring(startIndex)         # From startIndex to end of string
+- Substring(startIndex, length) # From startIndex for amount of length
+- Replace('a', '!')             # Replace single character
+- Replace('mark', 'marky')      # Replace entire string
+- String.IsNullOrEmpty(str)
+- String.IsNullOrWhiteSpace(str)
+- String.Join(" ", words)       # Joins the strings in the list words using " " as deliminator
+- str.Split(' ')                # Split string by space
+- int i = int.Parse(str)        # Convert string to integer. Exception on null string
+- int j = Convert.ToInt32(str)  # Does the same thing: covert string to integer. Safer
+- Coverting numbers to strings:
+```
+int i = 1234;
+string s = i.ToString();        // "1234"
+string t = i.ToString("C");     // "$1,234.00"
+string t = i.ToString("C0");    // "$1,234"
+```
+### Format Strings
+Each format string can take a number after it to signify number of places
+- c or C: Currency      123456(C) -> $123,456
+- d or D: Decimal       1234(D6) -> 001234
+- e or E: Exponential   1052.0329112756(E) -> 1.052033E+003
+- f or F: Fixed Point   1234.567(F1) -> 1234.5
+- x or X: Hexadecimal   255(X) -> FF
+
+## StringBuilder
+using System.Text
+- optimised for string manipulation
+- not for searching so can't find substrings inside a start string
+- no methods for IndexOf, LastIndexOf, Contains, StartsWith
+- includes Append, Insert, Remove, Replace, Clear
+- can still index individual characters `myString[0]`
+- can chain methods together e.g.
+
+```
+var myString = new StringBuilder();
+myString
+    .Append('-', 10)
+    .AppendLine()
+    .Append("Header")
+    .AppendLine()
+    .Append('-', 10)
+    .Replace('-', '+')
+    .Insert(0, new string('-', 10));
+```
+
 # Enumeration Types (enum)
 A value type defined by a set of named constants of "int". Instead of multiple contstants e.g.
 ```
