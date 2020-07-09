@@ -159,6 +159,51 @@ var person = new Person {
     LastName = "Bradshaw"
 };
 ```
+## Methods
+
+### Signature of a Method
+- name
+- number and type of parameters
+
+### Overloading Methods
+- having a method with the same name but different signatures
+- a method can have a varying number of parameters:
+```
+public int Add(int[] numbers) {}
+```
+- this isn't great though as you need to declare an array every time you call the Method
+
+### Params Modifier
+- gets over the problem highlighted above
+```
+public int Add(params int[] numbers) {}
+```
+- can then call this with `var result = calculator.Add(1,2,3,4);`
+
+### Ref Modifier - DON'T USE THIS
+```
+public void DoAWeirdThing(ref int a)
+{
+    a += 2;
+}
+var a = 1;
+weirdo.DoAWeirdThing(ref a);
+```
+- changes the parameter to a REFERENCE instead of a copy. 'a' will be modified here
+- this is against the way things work in C#
+
+### Out Modifier - DON'T USE THIS
+```
+public void MyMethod (out int result)
+{
+    result = 1;
+}
+int a;
+myClass.MyTheod(out a);
+```
+- let's you return values through the result
+- note that the method is a 'void'
+- breaks the convention of using a return type and a specific `return` code
 
 # Structs
 Small difference between a struct and a class. Structs are lighter, so if you are declaring thousands of them then structs will be more efficient
