@@ -148,6 +148,17 @@ public class Customer
             this.Name = name;
         }
 ```
+### Object Initialisers
+- a syntax for quickly initialising an object without the need to call one of its constructors
+- avoids needing to create multiple constructors
+- the default constructor is called, THEN the object initialisation code is used
+- example of an initialiser is as follows:
+```
+var person = new Person {
+    FirstName = "Mark",
+    LastName = "Bradshaw"
+};
+```
 
 # Structs
 Small difference between a struct and a class. Structs are lighter, so if you are declaring thousands of them then structs will be more efficient

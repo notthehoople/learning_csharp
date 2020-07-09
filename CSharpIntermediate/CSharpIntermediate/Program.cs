@@ -2,31 +2,6 @@
 
 namespace CSharpIntermediate
 {
-    public class Person
-    {
-        // Fields in the class
-        public string Name;
-
-        // Methods in the class
-        // Class constructor
-        public Person(string name)
-        {
-            this.Name = name;
-        }
-
-        public void Introduce(string to)
-        {
-            Console.WriteLine("Hi {0}, I am {1}", to, Name);
-        }
-
-        // Example of a static method
-        public static Person Parse(string str)
-        {
-            var person = new Person(str);
-
-            return person; 
-        }
-    }
 
     class MainClass
     {
