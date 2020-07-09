@@ -7,7 +7,7 @@ namespace CSharpIntermediate
         // Fields
         public int Id;
         public string Name;
-        public List<Order> Orders;
+        public readonly List<Order> Orders = new List<Order>();
 
         // Methods
         public Customer()
@@ -21,10 +21,16 @@ namespace CSharpIntermediate
             this.Id = id;
         }
 
+        // calls the previous constructor with the id, then runs the code here
         public Customer(int id, string name)
             : this(id)
         {
             this.Name = name;
+        }
+
+        public void Promote()
+        {
+            // ....
         }
     }
 }

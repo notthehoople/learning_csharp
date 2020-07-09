@@ -205,6 +205,27 @@ myClass.MyTheod(out a);
 - note that the method is a 'void'
 - breaks the convention of using a return type and a specific `return` code
 
+## Fields
+
+### Initialisation
+- preferred way to initialise is like this, creating and assigning the field in one go instead of definiing the field as `List<Order> Orders` then relying on the constructor to assign a new List to it.
+- note that some developers don't like this approach and prefer to rely on the constructor
+```
+public class Customer
+{
+    List<Order> Orders = new List<Order>();
+}
+```
+### Read only Fields
+- must be assigned within the constructor method
+- can only be initialised once. In this example once Orders has been declared it can't be declared again later. Avoids the possibility of a bug causing data loss
+```
+public class Customer
+{
+    readonly List<Order> Orders = new List<Order>();
+}
+```
+
 # Structs
 Small difference between a struct and a class. Structs are lighter, so if you are declaring thousands of them then structs will be more efficient
 ```

@@ -9,6 +9,15 @@ namespace CSharpIntermediate
             OverloadingMethods();
             StaticMethodExample();
             UseParamsModifier();
+
+            Console.WriteLine("===== Using Fields =====");
+
+            var customer = new Customer(1);
+            customer.Orders.Add(new Order());
+            customer.Orders.Add(new Order());
+            Console.WriteLine("Number of orders: " + customer.Orders.Count);
+
+            customer.Promote();
         }
 
         private static void UseParamsModifier()
