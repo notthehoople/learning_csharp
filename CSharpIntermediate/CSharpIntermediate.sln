@@ -1,0 +1,17 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpIntermediate", "CSharpIntermediate\CSharpIntermediate.csproj", "{47FC61BC-AE61-4474-ADC4-8C1227F1662B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|anycpu = Debug|anycpu
+		Release|anycpu = Release|anycpu
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{47FC61BC-AE61-4474-ADC4-8C1227F1662B}.Debug|anycpu.ActiveCfg = Debug|anycpu
+		{47FC61BC-AE61-4474-ADC4-8C1227F1662B}.Debug|anycpu.Build.0 = Debug|anycpu
+		{47FC61BC-AE61-4474-ADC4-8C1227F1662B}.Release|anycpu.ActiveCfg = Release|anycpu
+		{47FC61BC-AE61-4474-ADC4-8C1227F1662B}.Release|anycpu.Build.0 = Release|anycpu
+	EndGlobalSection
+EndGlobal

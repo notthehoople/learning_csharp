@@ -94,7 +94,62 @@ person.Introduce();
 - without the static modifier, each object in memory has a copy of each method
 - with the static modified, there can only be a single instance of a method in memory
 
-## Structs
+## Instance class member
+- accessible from an object
+```
+var person = new Person();
+person.Introduce();             // Introduce is an Instance class member
+```
+## Static class member
+- accessible from the class directly
+- used to represent concepts that are singleton e.g. there should only be one of these in the program
+```
+Console.WriteLine();            // WriteLine is a static class member
+DateTime.Now                    // Now is a static class member
+```
+
+## Constructor
+- has the same name as the class
+- has initialisation code for the class
+- no return type
+- can pass in variables
+- the compiler creates a default constructor if you don't specify one
+    - if you overload the constructor with custom constructors, the compiler doesn't create a default anymore, so you need to define one
+- type 'ctor' as a shortcode for creating a constructor
+- ALWAYS initialise a list field to an empty list
+
+### Constructor Overloading
+- overloading makes constructing easier
+```
+public class Customer
+{
+    public Customer() { ... }
+    public Customer(string name) { ... }
+    public Customer(int id, string name) { ... }
+}
+```
+- use : this() on the constructor declaration to reference higher level constructors and avoid having to duplicate code:
+- BEST PRACTICE: only use constructors when a field REALLY needs to be initialised to avoid future exceptions e.g. creating a list in the object fields.
+```
+        public Customer()
+        {
+            Orders = new List<Order>();
+        }
+            
+        public Customer(int id)
+            : this()                    // References Customer()
+        {
+            this.Id = id;
+        }
+
+        public Customer(int id, string name)
+            : this(id)                  // References Customer(int id)
+        {
+            this.Name = name;
+        }
+```
+
+# Structs
 Small difference between a struct and a class. Structs are lighter, so if you are declaring thousands of them then structs will be more efficient
 ```
 public struct RgbColour
