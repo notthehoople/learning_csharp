@@ -226,6 +226,35 @@ public class Customer
 }
 ```
 
+# Access Modifers
+- a way to control access to a class and/or its members
+## public
+
+## private
+## protected
+## internal
+## protected internal
+
+# Object Oriented Programming
+## Enclapsulation
+- hide fields that do not need to be available externally
+- private fields should start with an underscore as shown below
+- provide getter/setter methods as public to manipulate the fields
+```
+public class Person
+{
+    private string _name;
+    public void SetName(string name) {
+        if (!String.IsNullOrEmpty(name))
+            this._name = name;
+    }
+    public string GetName()
+    {
+        return _name;
+    }
+}
+```
+
 # Structs
 Small difference between a struct and a class. Structs are lighter, so if you are declaring thousands of them then structs will be more efficient
 ```

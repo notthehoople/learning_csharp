@@ -9,7 +9,22 @@ namespace CSharpIntermediate
             OverloadingMethods();
             StaticMethodExample();
             UseParamsModifier();
+            UsingFields();
+            Encapsulation1();
+        }
 
+        private static void Encapsulation1()
+        {
+            Console.WriteLine("===== Using Encapsulation =====");
+
+            var person = new PersonEncapsulated();
+            person.SetBirthdate(new DateTime(1999, 9, 28));
+
+            Console.WriteLine("Birthdate is " + person.GetBirthdate());
+        }
+
+        private static void UsingFields()
+        {
             Console.WriteLine("===== Using Fields =====");
 
             var customer = new Customer(1);
