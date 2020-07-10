@@ -229,11 +229,19 @@ public class Customer
 # Access Modifers
 - a way to control access to a class and/or its members
 ## public
-
+- accessible from everywhere
 ## private
+- accessible only from the class
 ## protected
+- accessible only from the class and its derived classes
+- similar to "private"
+- sometimes considered bad practice as exposes internal workings to other classes
 ## internal
+- accessible only from the same asssembly
+- e.g. make a class available to other classes in an assembly
 ## protected internal
+- accessible only from the same assembly or any derived classes
+- BAD practice!
 
 # Object Oriented Programming
 ## Enclapsulation
@@ -306,6 +314,54 @@ public class HttpCookie
 - this is GOOD
 - changing a class affects only that class
 - no class should know about the *implementation* of another class
+- important: encapsulation, relationship between classes, interfaces
+
+# Inheritance Class relationship
+- Is-a relationship
+- PROs: Code re-use, easier to understand
+- CONs: tightly coupled, fragile, can be abused
+```
+public class PresentationObject
+{
+    // Common shared code
+}
+public class Text : PresentationObject
+{
+    // Code Specific to Text
+}
+```
+
+# Composition Class relationship
+- a kind of relationship between 2 classes that allows one to contain the other
+- Has-a relationship
+- PROs: code re-use, great flexibility, loose coupling
+- CONs: harder to understand
+- Example: Car has an Engine
+- Example: many classes need a way to log information.
+    - DBMigrator --> Logger
+    - Installer --> Logger
+```
+public class Installer
+{
+    private Logger _logger;
+    public Installer(Logger logger)
+    {
+        _logger = logger;
+    }
+}
+```
+## Composition over Inheritance
+- Problems with inheritance
+    - easily abused by amataur designers / developers
+    - leads to large hierarchives
+    - fagility
+    - tight coupling
+- Composition
+    - any inheritance relationship can be modelled with Composition
+    - great flexibility
+    - eventually loose coupling
+- Inheritance is not necessarily a bad thing
+- Use both inheritance and composition
 
 # Structs
 Small difference between a struct and a class. Structs are lighter, so if you are declaring thousands of them then structs will be more efficient

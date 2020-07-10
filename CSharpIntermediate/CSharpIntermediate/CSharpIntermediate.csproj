@@ -41,6 +41,11 @@
     <Compile Include="PersonProperties.cs" />
     <Compile Include="HttpCookie.cs" />
     <Compile Include="Post.cs" />
+    <Compile Include="PresentationObject.cs" />
+    <Compile Include="Text.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="DbMigrator.cs" />
+    <Compile Include="Installer.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

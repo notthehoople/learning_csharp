@@ -14,6 +14,29 @@ namespace CSharpIntermediate
             UseProperties();
             UseIndexer();
             PostAndVotes();
+            InheritanceExample();
+            CompositionIntro();
+        }
+
+        private static void CompositionIntro()
+        {
+            var dbMigrator = new DbMigrator(new Logger());
+            // or we can declare logger like this:
+            var logger = new Logger();
+            var installer = new Installer(logger);
+
+            Console.WriteLine("===== Example: Composition =====");
+            dbMigrator.Migrate();
+            installer.Install();
+        }
+
+        private static void InheritanceExample()
+        {
+            Console.WriteLine("===== Example: Inheritance =====");
+
+            var text = new Text();
+            text.Width = 100;
+            text.Copy();
         }
 
         private static void PostAndVotes()
