@@ -11,6 +11,15 @@ namespace CSharpIntermediate
             UseParamsModifier();
             UsingFields();
             Encapsulation1();
+            UseProperties();
+        }
+
+        private static void UseProperties()
+        {
+            Console.WriteLine("===== Using Properties =====");
+
+            var person = new PersonProperties(new DateTime(1999, 7, 30));
+            Console.WriteLine(person.Age);
         }
 
         private static void Encapsulation1()

@@ -254,6 +254,27 @@ public class Person
     }
 }
 ```
+## Properties
+- a class member that encapsulates a getter/setter for accessing a field
+```
+private DateTime _birthdate;
+public DateTime Birthdate
+{
+    get { return _birthdate; }
+    set { _birthdate = value; }
+}
+```
+### Auto-implemented Properties
+- compiler recognises this special case and creates the field for you
+```
+public class Person
+{
+    public DateTime Birthdate { get; set; }
+}
+```
+### Viewing partially compiled code
+- on Windows, `ildasm`
+- on Mac, use either `monodis` or `ikdasm`
 
 # Structs
 Small difference between a struct and a class. Structs are lighter, so if you are declaring thousands of them then structs will be more efficient
