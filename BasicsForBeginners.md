@@ -276,6 +276,27 @@ public class Person
 - on Windows, `ildasm`
 - on Mac, use either `monodis` or `ikdasm`
 
+# Indexers
+- a way to access elements in a class that represents a list of values
+```
+cookie["name"] = "Mark";            // Using an indexer
+cookie.SetItem("name", "Mark");     // Same code but not using an indexer
+
+var name = cookie["name"];          // Using an indexer
+var name = cookie.GetItem("name");  // Same code but not using an indexer
+```
+- it is basically a property:
+```
+public class HttpCookie
+{
+    public string this[string key]  // use "this" keyword
+    {
+        get { ... }
+        set { ... }
+    }
+}
+```
+
 # Structs
 Small difference between a struct and a class. Structs are lighter, so if you are declaring thousands of them then structs will be more efficient
 ```
@@ -286,6 +307,10 @@ public struct RgbColour
     public int Blue;
 }
 ```
+
+# Dictionary (System.Collections.Generic)
+- a way of storing data in a key, pair combination (e.g. like a map in Go)
+- use a List<> for an ordered list of items
 
 # Arrays
 - Arrays are classes
@@ -553,7 +578,7 @@ Used to interact with the console
 ## Convert
 A collection of conversion methods for changing variable types
 - Convert.ToInt32(s);
-## DateTime
+## DateTime (System)
 - DateTime objects are immutable. Once they are set they cannot be changed
 - DateTime.Now          # The time now
 - DateTime.Today        # Today's date

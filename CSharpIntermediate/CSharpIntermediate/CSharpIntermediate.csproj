@@ -39,6 +39,7 @@
     <Compile Include="Calculator.cs" />
     <Compile Include="PersonEncapsulated.cs" />
     <Compile Include="PersonProperties.cs" />
+    <Compile Include="HttpCookie.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

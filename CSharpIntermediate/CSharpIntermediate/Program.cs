@@ -12,6 +12,16 @@ namespace CSharpIntermediate
             UsingFields();
             Encapsulation1();
             UseProperties();
+            UseIndexer();
+        }
+
+        private static void UseIndexer()
+        {
+            Console.WriteLine("===== Using Indexer =====");
+
+            var cookie = new HttpCookie();
+            cookie["name"] = "Mark";
+            Console.WriteLine(cookie["name"]);
         }
 
         private static void UseProperties()
