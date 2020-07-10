@@ -40,6 +40,7 @@
     <Compile Include="PersonEncapsulated.cs" />
     <Compile Include="PersonProperties.cs" />
     <Compile Include="HttpCookie.cs" />
+    <Compile Include="Post.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

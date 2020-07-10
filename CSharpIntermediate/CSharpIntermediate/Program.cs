@@ -13,6 +13,30 @@ namespace CSharpIntermediate
             Encapsulation1();
             UseProperties();
             UseIndexer();
+            PostAndVotes();
+        }
+
+        private static void PostAndVotes()
+        {
+            var post = new Post();
+
+            post.Title = "Getting started in C# Programming";
+            post.Description = "I come from a C and GO programming background and would like to understand C# more";
+
+            Console.WriteLine("===== Example: Posting =====");
+            Console.WriteLine("Title: " + post.Title);
+            Console.WriteLine("Description: " + post.Description);
+            Console.WriteLine("Date Posted: " + post.DateOfPost);
+
+            post.UpVote();
+            post.UpVote();
+            post.UpVote();
+            post.UpVote();
+            post.DownVote();
+            post.UpVote();
+            post.DownVote();
+
+            Console.WriteLine("Votes: " + post.GetVote());
         }
 
         private static void UseIndexer()

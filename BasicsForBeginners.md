@@ -296,6 +296,16 @@ public class HttpCookie
     }
 }
 ```
+# Class Coupling
+## Tightly Coupled
+- this is BAD
+- it is when a change in one class affects a large number of interlinked classes
+- a minor class change can have a major application change
+
+## Loosely Coupled
+- this is GOOD
+- changing a class affects only that class
+- no class should know about the *implementation* of another class
 
 # Structs
 Small difference between a struct and a class. Structs are lighter, so if you are declaring thousands of them then structs will be more efficient
