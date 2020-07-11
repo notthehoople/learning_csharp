@@ -3,10 +3,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">anycpu</Platform>
-    <ProjectGuid>{CFA229FA-B842-49B6-AE85-0CD23FFDCF1D}</ProjectGuid>
+    <ProjectGuid>{DD38CA4E-330D-4CEA-ADD3-D3BB1C6B4497}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>OOP</RootNamespace>
-    <AssemblyName>OOP</AssemblyName>
+    <RootNamespace>BadShapeImplementation</RootNamespace>
+    <AssemblyName>BadShapeImplementation</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|anycpu' ">
@@ -32,12 +32,9 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Vehicle.cs" />
-    <Compile Include="Car.cs" />
-    <Compile Include="Shape.cs" />
-    <Compile Include="Text.cs" />
-    <Compile Include="ShapeType.cs" />
     <Compile Include="Canvas.cs" />
+    <Compile Include="Shape.cs" />
+    <Compile Include="ShapeType.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

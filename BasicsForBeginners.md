@@ -233,6 +233,22 @@ myClass.MyTheod(out a);
 - note that the method is a 'void'
 - breaks the convention of using a return type and a specific `return` code
 
+### Method Overriding
+- modify the implementation of an inherited method
+- checkout "BadShapeImplementation" and "GoodShapeImplementation" for an example
+- use `virtual` in the declaration of the base class method
+- use `override` in the declaration of the sub class method
+```
+public class Shape
+{
+    public virtual void Draw() { // Default implementation }
+}
+public class Circle : Shape
+{
+    public override void Draw() { // New implementation }
+}
+```
+
 ## Fields
 
 ### Initialisation

@@ -1,0 +1,17 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoodShapeImplementation", "GoodShapeImplementation\GoodShapeImplementation.csproj", "{A1467CE1-567D-4AB0-B749-F0B758327F9A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|anycpu = Debug|anycpu
+		Release|anycpu = Release|anycpu
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A1467CE1-567D-4AB0-B749-F0B758327F9A}.Debug|anycpu.ActiveCfg = Debug|anycpu
+		{A1467CE1-567D-4AB0-B749-F0B758327F9A}.Debug|anycpu.Build.0 = Debug|anycpu
+		{A1467CE1-567D-4AB0-B749-F0B758327F9A}.Release|anycpu.ActiveCfg = Release|anycpu
+		{A1467CE1-567D-4AB0-B749-F0B758327F9A}.Release|anycpu.Build.0 = Release|anycpu
+	EndGlobalSection
+EndGlobal
