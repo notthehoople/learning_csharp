@@ -354,6 +354,36 @@ public class Car : Vehicle
 - if the constructor of the base class needs a parameter, you need to deal with this in your sub class as well
 - :base lets you access the base contructor class
 
+## Upcasting / Downcasting
+- conversion from a derived class to a base class
+```
+public class Shape { }
+public class Circle : Shape { }
+
+Circle circle = new Circle();
+Shape shape = circle;                   // Upcasting. No conversion is required. Upcasting is implicit
+Circle anotherCircle = (Circle)shape;   // Downcasting. Explicit cast required
+```
+- will get an InvalidCastException if you try to explicit cast to a different class
+- in the example above, both "shape" and "circle" point to the same object but present different views of it
+
+- Downcasting is frequently needed when using libraries as the types can be set to "object". Downcast to the type you need so you can access Methods you need
+
+### The "as" keyword
+- prevents exceptions when the cast can't be done
+- use this when you're not sure what the runtime class of an object is going to be
+```
+Car car = (Car) obj;                    // Can throw an exception in this explicit cast
+
+Car car = obj as Car;                   // Safer. Will return null if fails
+if (car != null) { ... }
+```
+### The "is" keyword
+- test if an object is a particular class
+```
+if (obj is Car) { ... }
+```
+
 # Composition Class relationship
 - a kind of relationship between 2 classes that allows one to contain the other
 - Has-a relationship
