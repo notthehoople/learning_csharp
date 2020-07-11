@@ -24,6 +24,34 @@ These are the common primitive types:
 - char (2 bytes)
 - bool
 
+## Value Types
+- stored on the stack
+- all primitive types, plus the struct type
+- short lifespan. As soon as they go out of scope they are destroyed
+
+## Reference Types
+- stored in the heap
+- any classes (Object, Array, String, Vehicle)
+
+## Boxing & Unboxing
+- have a performance penalty
+
+### Boxing
+- the process of converting a value type instance to an object reference
+```
+int number = 10;
+object obj = number;
+```
+- here the number is "boxed" in an object and is stored on the heap
+
+### Unboxing
+- opposite of boxing
+- a new variable on the stack is created
+```
+object obj = 10;
+int number = (int)obj;
+```
+
 ## var
 Using `var` to declare variables lets C# detect the data type itself
 ```

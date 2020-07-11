@@ -12,7 +12,23 @@ namespace OOP
             ConstructorInheritance();
             Upcasting();
             Downcasting();
-            
+            BoxingAndUnboxing();
+        }
+
+        private static void BoxingAndUnboxing()
+        {
+            var list = new ArrayList();             // Performance impact ahead!
+            list.Add(1);                            // Add takes type "object" so boxing will happen with value 1
+            list.Add("Mark");                       // string is a reference type, so no boxing
+            list.Add(DateTime.Today);               // Structure. Boxing happens here
+
+            // Better way:
+
+            var anotherList = new List<int>();      // Type safety created here, as the list must be of type "int"
+            anotherList.Add(1);                     // The Add method expects an int here, so no boxing happens
+
+            var names = new List<string>();         // Type safety again, list will be all reference types "string"
+            names.Add("Mark");                      // No boxing happening here
         }
 
         private static void Downcasting()
