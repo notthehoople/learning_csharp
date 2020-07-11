@@ -287,6 +287,37 @@ public class Customer
 - accessible only from the same assembly or any derived classes
 - BAD practice!
 
+# Abstract Modifier
+- indicates that a class or a member is missing implementation
+- inherently 'virtual'
+```
+public abstract class Shape
+{
+    public abstract void Draw();
+}
+```
+## Abstract Members
+- if you declare a method as 'abstract' then the class needs to be declared 'abstract' as well
+- a member class MUST implement ALL abstract methods in the base abstract class
+- abstract classes CANNOT be instantiated `var shape = new Shape(); // won't compile`
+
+### Why Abstract?
+- when you want to provide some common behavious, while forcing other developers to follow your design
+- e.g. example for Shape above FORCES another developer to implement the Draw method for their member class
+
+# Sealed Modifier
+- applied tp a class or class member
+- opposite of abstract
+- prevents derivation of classes or overriding of methods
+```
+public sealed class Circle : Shape { ... }
+public sealed override void Draw() { ... }
+```
+
+### Why Sealed?
+- sealed classes are slightly faster because of some run-time optimisations
+- very rarely used, possibly an anti-pattern
+
 # Object Oriented Programming
 ## Enclapsulation
 - hide fields that do not need to be available externally
