@@ -5,7 +5,7 @@ namespace StackExample
 {
     public class Stack
     {
-        private List<string> ItemList = new List<string>();
+        private readonly List<string> _itemList = new List<string>();
 
         public void Push(string input)
         {
@@ -18,7 +18,7 @@ namespace StackExample
                     if (input.Trim() == "")
                         throw new InvalidOperationException("Missing data to store");
                     else
-                        ItemList.Add(input);
+                        _itemList.Add(input);
                 }
             }
             catch (Exception exception)
@@ -31,11 +31,11 @@ namespace StackExample
         {
             try
             {
-                if (ItemList.Count > 0)
+                if (_itemList.Count > 0)
                 {
-                    var i = ItemList[ItemList.Count - 1];
-                    ItemList.Remove(i);
-                    return i;
+                    var popItem = _itemList[_itemList.Count - 1];
+                    _itemList.Remove(popItem);
+                    return popItem;
                 }
                 else
                 {
@@ -52,12 +52,12 @@ namespace StackExample
 
         public List<string> ShowList()
         {
-            return ItemList;
+            return _itemList;
         }
 
         public void Clear()
         {
-            ItemList.Clear();
+            _itemList.Clear();
         }
     }
 }

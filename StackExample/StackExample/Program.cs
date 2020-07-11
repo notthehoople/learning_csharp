@@ -7,8 +7,9 @@ namespace StackExample
     {
         public static void Main(string[] args)
         {
-            Stack stack = new Stack();
+            var stack = new Stack();
 
+            Console.WriteLine("===== Starting New Run at {0} =====", DateTime.Now);
             stack.Pop();
             PrintList("Popped 1 from empty list", stack.ShowList());
             stack.Push("First");
