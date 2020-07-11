@@ -330,6 +330,29 @@ public class Text : PresentationObject
     // Code Specific to Text
 }
 ```
+- base class constructors are executed first
+- base class constructors are not inherited
+```
+public class Vehicle
+{
+    private string _registrationNumber;
+    public Vehicle(string registrationNumber)
+    {
+        _registrationNumber = registrationNumber;
+    }
+}
+
+public class Car : Vehicle
+{
+    public Car(string registrationNumber)
+        : base(registrationNumber)
+    {
+        // initialise fields specific to the Car class
+    }
+}
+```
+- if the constructor of the base class needs a parameter, you need to deal with this in your sub class as well
+- :base lets you access the base contructor class
 
 # Composition Class relationship
 - a kind of relationship between 2 classes that allows one to contain the other

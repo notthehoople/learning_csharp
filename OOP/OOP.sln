@@ -1,0 +1,17 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOP", "OOP\OOP.csproj", "{CFA229FA-B842-49B6-AE85-0CD23FFDCF1D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|anycpu = Debug|anycpu
+		Release|anycpu = Release|anycpu
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CFA229FA-B842-49B6-AE85-0CD23FFDCF1D}.Debug|anycpu.ActiveCfg = Debug|anycpu
+		{CFA229FA-B842-49B6-AE85-0CD23FFDCF1D}.Debug|anycpu.Build.0 = Debug|anycpu
+		{CFA229FA-B842-49B6-AE85-0CD23FFDCF1D}.Release|anycpu.ActiveCfg = Release|anycpu
+		{CFA229FA-B842-49B6-AE85-0CD23FFDCF1D}.Release|anycpu.Build.0 = Release|anycpu
+	EndGlobalSection
+EndGlobal
