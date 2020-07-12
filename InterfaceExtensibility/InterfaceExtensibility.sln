@@ -1,0 +1,17 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterfaceExtensibility", "InterfaceExtensibility\InterfaceExtensibility.csproj", "{05CEF848-2A9A-475C-8DA0-4D2B9DC1562C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|anycpu = Debug|anycpu
+		Release|anycpu = Release|anycpu
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{05CEF848-2A9A-475C-8DA0-4D2B9DC1562C}.Debug|anycpu.ActiveCfg = Debug|anycpu
+		{05CEF848-2A9A-475C-8DA0-4D2B9DC1562C}.Debug|anycpu.Build.0 = Debug|anycpu
+		{05CEF848-2A9A-475C-8DA0-4D2B9DC1562C}.Release|anycpu.ActiveCfg = Release|anycpu
+		{05CEF848-2A9A-475C-8DA0-4D2B9DC1562C}.Release|anycpu.Build.0 = Release|anycpu
+	EndGlobalSection
+EndGlobal

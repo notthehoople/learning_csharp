@@ -491,6 +491,20 @@ public class Installer
 - Inheritance is not necessarily a bad thing
 - Use both inheritance and composition
 
+# Interfaces
+- Similar to a class in syntax, but is fundamentally different
+- interface members don't have implementations, just definitions
+- interface members don't have modifiers (e.g. public, private, etc)
+```
+public interface ITaxCalculator
+{
+    int Calculate();
+}
+```
+
+## Interfaces and Extensibility
+- useful to define classes that you haven't implemented yet
+
 # Structs
 Small difference between a struct and a class. Structs are lighter, so if you are declaring thousands of them then structs will be more efficient
 ```
