@@ -495,6 +495,7 @@ public class Installer
 - Similar to a class in syntax, but is fundamentally different
 - interface members don't have implementations, just definitions
 - interface members don't have modifiers (e.g. public, private, etc)
+- used for building extensible, testable and loosely coupled applications
 ```
 public interface ITaxCalculator
 {
@@ -778,6 +779,31 @@ do
 ## Break and Continue
 - break: jumps out of the loop
 - continue: jumps to the next iteration of the loop
+
+# Useful
+## IList<>
+- a list of Interfaces
+- lets you use 1 or more interfaces
+```
+public class Video
+{
+    private readonly IList<INotificationChannel> _notificationChannels;
+    public VideoEncoder()
+    {
+        _notificationChannels = new List<INotificationChannel>();
+    }
+    public void Encode(Video video)
+    {
+        foreach (var channel in _notificationChannels)
+            channel.Send(new Message());
+    }
+    public void RegisterNotificationChannel(INotificationChannel channel)
+    {
+        _notificationChannels.Add(channel);
+    }
+}
+- See "Polymorphism example" in github
+```
 
 # Useful Classes
 ## Console
