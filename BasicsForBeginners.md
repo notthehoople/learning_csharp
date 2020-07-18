@@ -896,6 +896,27 @@ public void OnVideoEncoded(object source, EventArgs e) { ... }
     - agreement / contract between Publisher and Subscriber
     - determines the signature of the event handler method in Subscriber
 
+# Extension Methods
+- add methods to an existing class without
+    - changing it's source code
+    - creating a new class that inherits from it
+- use extension methods sparingly
+- defnied as static methods but are called by using instance method syntax
+- need to add `using System.Linq;`
+- first parameter specifies which type the method operates on. The parameter is preceded by the "this" modifier
+```
+public static class StringExtensions
+{
+    public static string Shorten(this String str, int numberOfWords)
+    {
+        ...
+    }
+}
+...
+string post = "Lots and lots of words"
+var shortenedPost = post.Shorten(5);
+```
+
 # Useful Classes
 ## Console
 Used to interact with the console
