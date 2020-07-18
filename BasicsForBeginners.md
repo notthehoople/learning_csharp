@@ -830,6 +830,20 @@ numbers.Add(10);
 var books = new GenericList<Book>();
 books.Add(new Book());
 ```
+# Delegates
+- an object that knows how to call a method (or a group of methods)
+- a reference (or a pointer) to a function
+- why?
+    - for designing extensible and flexible applications (e.g. frameworks)
+- code example: delegate project
+
+- in .NET framework there are 2 delegates that can be used instead of needing a custom delegate: "action" and "func"
+    - System.Action<> returns void
+    - System.Func<> returns a value
+- only needed where we need lots of flexibility or extensibility
+- use a delegate when:
+    - an eventing design pattern is used
+    - the caller doesn't need to access other properties or methods ont the object implementing the method
 
 # Useful Classes
 ## Console
