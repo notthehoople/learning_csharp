@@ -805,6 +805,32 @@ public class Video
 - See "Polymorphism example" in github
 ```
 
+# Generics
+- created to get away from having to create a class for a list of different types OR creating a class for storing "object" which leads to boxing/unboxing
+- generics mean that at runtime the lists are actually the defined types instead of being just objects and needing to be boxed/unboxed
+- C# has many built in generic types in System and System.Collection.Generic and you'll ususally use one of these instead of create your own generic like the code below
+- For example, System.Nullable<>
+```
+public class GenericList<T>
+{
+    public void Add(T value)
+    {
+
+    }
+
+    public T this[int index]
+    {
+        get { throw new }
+    }
+}
+
+var numbers = new GenericList<int>();
+numbers.Add(10);
+
+var books = new GenericList<Book>();
+books.Add(new Book());
+```
+
 # Useful Classes
 ## Console
 Used to interact with the console
