@@ -1,0 +1,17 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventsAndDelegates", "EventsAndDelegates\EventsAndDelegates.csproj", "{80A92295-1958-43D2-895D-A35A50F48C34}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|anycpu = Debug|anycpu
+		Release|anycpu = Release|anycpu
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{80A92295-1958-43D2-895D-A35A50F48C34}.Debug|anycpu.ActiveCfg = Debug|anycpu
+		{80A92295-1958-43D2-895D-A35A50F48C34}.Debug|anycpu.Build.0 = Debug|anycpu
+		{80A92295-1958-43D2-895D-A35A50F48C34}.Release|anycpu.ActiveCfg = Release|anycpu
+		{80A92295-1958-43D2-895D-A35A50F48C34}.Release|anycpu.Build.0 = Release|anycpu
+	EndGlobalSection
+EndGlobal

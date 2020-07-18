@@ -845,6 +845,57 @@ books.Add(new Book());
     - an eventing design pattern is used
     - the caller doesn't need to access other properties or methods ont the object implementing the method
 
+# Lambda Expression
+- an anonymouse method (no access modifier; no name; no return statement)
+## Why do we use them?
+- convenience
+- makes code more readable
+- args "goes to" expression
+```
+// args => expression
+number => number * number;
+// equivalent to:
+public int Square(int number)
+{
+    return number * number;
+}
+```
+- you can also define a delegate using a lambda expression:
+```
+Func<int, int> square = number => number * number;
+
+Console.WriteLine("Square of 5 is " + square(5));
+```
+- here, Func's parameter types are <input_type, result_type>
+- square is the name of the delegate
+- `number => number * number` is what it will do
+## Expressions of different types
+- no arguments: `() => ...`
+- one argument: `x => ...`
+- multiple: `(x, y, z) => ...`
+
+## Predicate
+- a predicate is a delegate that returns a bool telling you if the condition is satisfied
+- can do this using a lambda as well:
+```
+var cheapBooks = books.FindAll(book => book.Price < 10);
+// Will return all books with a price less than 10
+```
+
+# Events
+- a mechanism for communicating between objects
+- used in building Loosely Coupled Applications
+- helps extending applications
+- class A is the publisher and sends events. It knows nothing of the subscribers
+- class B is the subscriber and receives events
+```
+// Subscriber creates an event handler along the following lines:
+public void OnVideoEncoded(object source, EventArgs e) { ... }
+```
+- delegates are used:
+    - agreement / contract between Publisher and Subscriber
+    - determines the signature of the event handler method in Subscriber
+
 # Useful Classes
 ## Console
 Used to interact with the console
