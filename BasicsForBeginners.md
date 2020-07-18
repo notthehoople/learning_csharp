@@ -917,6 +917,99 @@ string post = "Lots and lots of words"
 var shortenedPost = post.Shorten(5);
 ```
 
+# LINQ
+- stands for Language Integrated Query
+- Lets you query objects
+- objects in memory (LINQ to Objects), databases (LINQ to Entities), XML (LINQ to XML), ADO.NET data sets (LINQ to Data Sets)
+- add `using System.Linq` for LINQ
+
+## LINQ Extension Methods
+- LINQ expressions can also be chained. Here we'll pull out the cheap books, then sort by title
+```
+var cheapBooksLINQ = books.Where(b => b.Price < 10).OrderBy(b => b.Title);
+```
+
+- To order a collection by something, use LINQ with a lamba:
+```
+books.OrderBy(b => b.Title);
+```
+
+- To select one of more properties from an object use Select(). Here we just pick the title so the result will be a string
+```
+books.OrderBy(b => b.Title).Select(b => b.Title);
+```
+
+- To select a single result:
+```
+var book = books.Single(b => b.Title == "ASP.NET MVC");
+```
+    - Single method expects there to be one and only one result. Otherwise throws an exception
+    - If you're not sure, use SingleOrDefault:
+```
+var book = books.SingleOrDefault(b => b.Title == "ASP.NET MVC++");
+// Since this might be null, we check for book being null when printing
+// This will print "True" if book is null, otherwise "False"
+Console.WriteLine(book == null);
+```
+
+- First() gets the first item found in a list
+- Last() gets the last item in a list
+```
+var book = books.First(b => b.Title == "C# Advanced Topics");
+var book = books.FirstOrDefault(b => b.Title == "C# Advanced Topics");
+var book = books.Last(b => b.Title == "C# Advanced Topics");
+var book = books.LastOrDefault(b => b.Title == "C# Advanced Topics");
+```
+
+- Skip() skips the number of entries specified
+- Take() takes the number of entries specified
+```
+// Skip the first 2 entries, then return the next 3
+var pagedBooks = books.Skip(2).Take(3);
+```
+
+- Count() counts the number of list entries
+- Max() returns the maximum of something. You will have to define what Max means for your list
+- Min() returns the minimum of something
+```
+// Returns the highest price in the list
+var highPrice = books.Max(b => b.Price);
+```
+
+- Sum() returns the sum of all the defined entries
+```
+var totalPricing = books.Sum(b => b.Price);
+```
+
+### LINQ Extension Methods summary
+```
+books.Where();
+books.Single();
+books.SingleOrDefault();
+
+books.First();
+books.FirstOrDefault();
+
+books.Last();
+books.LastOrDefault();
+
+books.Min();
+books.Max();
+books.Count();
+books.Sum();
+books.Average(b => b.Price);
+
+books.Skip(5).Take(3);
+```
+
+## LINQ Query Operators
+```
+var cheaperBooks = from b in books
+                   where b.Price < 10
+                   orderby b.Title
+                   select b.Title;
+```
+
 # Useful Classes
 ## Console
 Used to interact with the console
