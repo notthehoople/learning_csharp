@@ -1010,6 +1010,46 @@ var cheaperBooks = from b in books
                    select b.Title;
 ```
 
+# Nullable types
+- Value Types cannot be Null
+- In some situations you need a null (e.g. Customer.Birthday (datetime NULL))
+- Nullable<> is a generic type in the System namespace
+```
+Nullable<DateTime> date = null;     // Longhand
+DateTime? date = null;              // Shorthand
+```
+- Methods of the Nullable type:
+    - .GetValueOrDefault - preferred way of getting the value. You either get the value, or you get the default value for the type
+    - .HasValue - true / false depending on whether there's a set value
+    - .Value - will get an exception if the value is null
+
+```
+DateTime? date = new DateTime(2014, 1, 1);
+DateTime date2 = date.GetValueOrDefault();      // Need to set to value to get away from Nullable
+DateTime? date3 = date2;                        // This is fine. No need for a cast
+```
+
+## Null Coalescing Operator
+
+```
+if (date != null)
+    date2 = date.GetValueOrDefault();
+else
+    date2 = DateTime.Today;
+```
+
+Can be replaced by the null coalescing operator:
+
+```
+DateTime date2 = date ?? DateTime.Today;
+```
+- means: if date is not null set date2 = date. If date is null then set date2 = DateTime.Today
+- Similar approach to tertiary operator:
+
+```
+DateTime date3 = (date != null) ? date.GetValueOrDefault() : DateTime.Today;
+```
+
 # Useful Classes
 ## Console
 Used to interact with the console
