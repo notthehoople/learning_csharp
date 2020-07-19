@@ -1138,6 +1138,39 @@ throw new YouTubeException("Could not fetch videos from YouTube", ex);
 ## Stack Trace
 A stack trace shows the history of calls that happened before the exception, in reverse order. The stack trace is show along with the exception.
 
+# Asynchronous Programming
+- when a function is called, program execution continues to the next line, without waiting for the function to complete
+- improves responsiveness of application
+- use it anytime we have a blocking operation (e.g. reading from the network)
+- since .NET 4.5 we use Async/Await
+- the following line uses an Async version of DownloadString to carry out the action in the background. The "await" tells the compiler to come back here once the operation has completed so that code after it can be run
+- we can only use the await modifier in an async method
+```
+public async Task DownloadHtmlAsync(string url)
+{
+    var html = await webClient.DownloadStringTaskAsync(url);
+}
+
+// Another example:
+public async Task<string> GetHtmlAsync(string html)
+{
+    var WebClient = new WebClient();
+    return await webClient.DownloadStringTaskAsync(url);
+}
+
+// Here a message is printed after the task is setup but before it runs
+// Uses multi-threading to improve responsiveness
+var getHtmlTask = GetHtmlAsync("http://docs.microsoft.com");
+Console.WriteLine("We're downloading things from microsoft");   // Runs immediately
+var html = await getHtmlTask;                   // At this point the control is passed pack to the main program until the download is complete
+Console.WriteLine(html.Substring(0, 10));
+```
+
+## Synchronous Program Execution
+- executed line by line one at a time
+- when a function is called, program execution has to wait until the function returns
+
+
 # Useful Classes
 ## Console
 Used to interact with the console
