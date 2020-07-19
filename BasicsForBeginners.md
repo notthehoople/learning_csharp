@@ -1050,6 +1050,94 @@ DateTime date2 = date ?? DateTime.Today;
 DateTime date3 = (date != null) ? date.GetValueOrDefault() : DateTime.Today;
 ```
 
+# Dynamics
+- Statically-typed languages: C#, Java (type resolution is done at compile time)
+    - PRO: early feedback
+- Dynamically-typed languages: Ruby, Javascript, Python (type resolution at run time)
+    - easier and faster to code
+
+- .NET 4 added the dynamic capability to improve interoperability with:
+    - COM (e.g. writing office applications)
+    - Dynamic Languages in .NET (IronPython)
+```
+dynamic excelObject = "Mark";
+excelObject.Optimize();
+
+dynamic name = "Mark";
+name = 10;                  // This is fine. The type of "name" changes as it is assinged to
+
+dynamic a = 10;
+dynamic b = 5;
+var c = a + b;              // c will end up dynamic because a and b are also dynamic
+```
+
+- type casts happen automatically to dynamic variables, as long as it's implicitly convertable
+
+# Exception Handling
+- we put the code that might throw an exception in a try / catch block
+- catch block code runs when an exception occurs in the try block
+- in the catch block we have a choice:
+    - catch the exception and deal with it
+    - pass the exception to the calling routine
+- in general, the main program level should always be inside a try / catch block
+- can have multiple catch blocks, going from most to least specific. The order is important
+
+```
+try
+{
+
+}
+catch (Exception ex)
+{
+    throw;
+}
+finally
+{
+
+}
+```
+
+- `System.Exception` is the top level type of call exceptions
+    - .Message: the exception text
+    - .Source: the place where the exception happened
+    - .StackTrace: the stack trace up to when the exception happened
+    - .TargetSite: The exact place where the exception happened
+- `finally` block
+    - used to manually do a clean-up of unmanaged resources
+    - `IDisposable` disposes of these e.g. a StreamReader to close open files
+- `using` statement negates the need for a `finally` block:
+```
+try
+{
+    using (var streamReader = new StreamReader(@"c:\file.zip"))
+    {
+        var content = streamReader.ReadToEnd();
+    }
+}
+catch (Exception ex)
+    ...
+```
+
+## Custom Exceptions
+- create a class that derives from Exception:
+- just need to pass the message and exception to the base
+```
+public class YouTubeException : Exception
+{
+    public YoutubeException(string message, Exception innerException)
+        : base(message, innerException)
+    {
+        ...
+    }
+}
+
+// To use this can call YouTubeException:
+throw new YouTubeException("Could not fetch videos from YouTube", ex);
+```
+
+## Stack Trace
+A stack trace shows the history of calls that happened before the exception, in reverse order. The stack trace is show along with the exception.
+
 # Useful Classes
 ## Console
 Used to interact with the console
